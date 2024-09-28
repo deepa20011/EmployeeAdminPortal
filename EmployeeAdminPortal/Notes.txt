@@ -1,0 +1,16 @@
+Install packages 
+Micorosft.entityfraneworkcore.sqlserver
+Micorosft.entityfraneworkcore.Tools
+
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSqlLocalDb;Database=EmployeesDB;Trusted_connection=True;TrustServerCertificate=True;"
+  }
+
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+cmd commands-Tools->Nuget package manager console.
+add-migration "migration_name"
+update-database
